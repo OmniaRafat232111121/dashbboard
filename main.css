@@ -386,11 +386,24 @@ display: flex;
     
     }
 }
+@media(max-width:767px){
+#content .wrapper .right .btn-download{
+  display:none;
+}
+}
+@media(max-width:400px){
+    #content .table-data .order{
+
+width:300px;
+font-size: 10px;
+} 
+}
 #content main .table-data .order {
 	border-radius: 20px;
 	background: var(--light);
 	padding: 24px;
 	overflow-x: auto;
+ 
     
 }
 #content main .table-data .head {

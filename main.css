@@ -372,12 +372,19 @@ display: flex;
 	color: var(--dark);	
 }
 #content main .table-data{
-    display: flex;
-	flex-wrap: wrap;
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 	grid-gap: 24px;
-	margin-top: 24px;
-	width: 100%;
-	color: var(--dark);
+	margin-top: 36px;
+}
+@media(max-width:850px){
+    #content main .table-data{
+        display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 24px;
+	margin-top: 36px;
+    
+    }
 }
 #content main .table-data .order {
 	border-radius: 20px;
@@ -392,6 +399,8 @@ display: flex;
 	grid-gap: 16px;
 	margin-bottom: 24px;
 }
+
+
 #content main .table-data .head h3 {
 	margin-right: auto;
 	font-size: 24px;
@@ -449,6 +458,38 @@ display: flex;
 #content main .table-data .order table tr td .status.pending {
 	background: var(--orange);
 }
+
+
+
+#content main .table-data .todo {
+	flex-grow: 1;
+	flex-basis: 30%;
+}
+#content main .table-data .todo .todo-list {
+	width: 100%;
+}
+#content main .table-data .todo .todo-list li {
+	width: 100%;
+	margin-bottom: 16px;
+	background: var(--grey);
+	border-radius: 10px;
+	padding: 14px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#content main .table-data .todo .todo-list li .bx {
+	cursor: pointer;
+}
+#content main .table-data .todo .todo-list li.completed {
+	border-left: 10px solid var(--blue);
+}
+#content main .table-data .todo .todo-list li.not-completed {
+	border-left: 10px solid var(--orange);
+}
+#content main .table-data .todo .todo-list li:last-child {
+	margin-bottom: 0;
+}
 @media (max-width:767px) {
     #sidebar{
         width:200px;
@@ -461,6 +502,7 @@ display: flex;
     #content nav .nav-link {
 		display: none;
 	}
+    
 }
 
 
